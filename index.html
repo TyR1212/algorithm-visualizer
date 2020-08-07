@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Load a random image to test connection-->
+        <div id="connection-warning" style="display: none;">No internet connection! Fonts and icons can't be loaded!</div>
+        <script src="scripts/noConnection.js"></script>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Short-beaked_echidna_in_ANBG.jpg/220px-Short-beaked_echidna_in_ANBG.jpg"
+            onerror="noConnection()" style="display: none;">
+        <!--End test-->
+
+        <link rel="stylesheet" href="styles/indexStyle.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <title>Algorithm Visualizer</title>
+    </head>
+    
+    <script src="scripts/timeline.js"></script>
+    <script src="scripts/globalVars.js"></script>
+    <script src="scripts/changeElementColors.js"></script>
+    <script src="scripts/getHeights.js"></script>
+    <script src="scripts/randomizeHeights.js"></script>
+    <script src="scripts/updateBars.js"></script>
+    <script src="scripts/pauseSorting.js"></script>
+    <script src="scripts/resetBars.js"></script>
+    <script src="scripts/sleep.js"></script>
+    <script src="scripts/stopwatch.js"></script>
+    <script src="scripts/startSort.js"></script>
+    <script src="scripts/resetStates.js"></script>
+    <script src="algorithms/bubbleSort.js"></script>
+    <script src="algorithms/mergeSort.js"></script>
+    <script src="algorithms/insertionSort.js"></script>
+    <script src="algorithms/selectionSort.js"></script>
+    
+    <body>
+        <h1 id="heading">Algorithm Visualizer</h1>
+
+        <div id="time-box" class="time-box">
+            <h2 id="time-label">Time: 0.0s</h2>
+        </div>
+
+        <div id="btn-group">
+            <button id="play-btn" class="btn" onclick="startSort()">
+                <i id="play-icon" class="fas fa-play" onerror="checkConnection()"></i>Sort
+            </button>
+            <button id="pause-btn" class="btn" onclick="togglePaused()">
+                <i id="pause-icon" class="fas fa-pause"></i>Pause
+            </button>
+            <br>
+            <button id="reset-btn" class="btn" onclick="resetBars()">
+                <i id="reset-icon" class="fas fa-reply"></i>Reset
+            </button>
+            <button id="randomize-btn" class="btn" onclick="randomizeHeights(); updateBars()">
+                <i id="randomize-icon" class="fas fa-question"></i>Random-<br>ize
+            </button>
+        </div>
+        
+        <div id="graph-placeholder"></div>
+
+        <div id="table-placeholder"></div>
+
+        <script src="scripts/drawBars.js"></script>
+        <script src="scripts/drawTable.js"></script>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Sriracha");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: honeydew;
+  margin: 0;
+  padding: 0;
+}
+#graph {
+  position: relative;
+  transform: rotate(180deg);
+  height: 350px;
+  margin: 0 auto;
+  width: 0%;
+  bottom: 0px;
+}
+#connection-warning {
+  position: absolute;
+  left: 100px;
+  width: 225px;
+  height: 50px;
+  border: 2px solid red;
+  border-radius: 10px;
+  background-color: rgba(255, 0, 0, 0.205);
+  text-align: center;
+  padding: 3px 10px 0px 10px;
+}
+#graph .bar {
+  overflow: hidden;
+  background-color: green;
+  float: right;
+}
+#heading {
+  font-family: "Sriracha", sans-serif;
+  text-align: center;
+}
+#time-label {
+  font-size: 20px;
+  position: relative;
+  bottom: 5px;
+  left: 5px;
+}
+#time-box {
+  position: absolute;
+  top: 75px;
+  right: 200px;
+  width: 135px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+#btn-group {
+  position: absolute;
+  right: 250px;
+  top: 250px;
+  z-index: 1;
+}
+.btn {
+  width: 64px;
+  height: 64px;
+  margin: 10px 10px 10px 5px;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+.btn:hover {
+  border: rgb(66, 66, 66) 2px solid;
+}
+.btn i {
+  margin-bottom: 5px;
+  font-size: 20px;
+  display: block;
+}
+#randomize-btn {
+  position: relative;
+  bottom: 8px;
+}
+.table-positioning {
+  margin: 0 auto;
+  width: 31%;
+  position: relative;
+  top: 80px;
+}
+#table-container {
+  width: 520px;
+  height: 120px;
+  overflow: auto;
+}
+#runs-table {
+  width: 500px;
+  border-collapse: collapse;
+}
+#runs-table th {
+  border: 1px solid black;
+}
+#runs-table td {
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid black;
+}
+.algorithm-name {
+  text-align: left !important;
+}
+#table-label {
+  margin: 0 auto;
+  width: 32%;
+  font-family: "Sriracha", sans-serif;
+  font-size: 20px;
+}
