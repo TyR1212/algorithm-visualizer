@@ -32,33 +32,66 @@
     <script src="algorithms/selectionSort.js"></script>
     
     <body>
-        <h1 id="heading">Algorithm Visualizer</h1>
-
-        <div id="time-box" class="time-box">
-            <h2 id="time-label">Time: 0.0s</h2>
-        </div>
-
-        <div id="btn-group">
-            <button id="play-btn" class="btn" onclick="startSort()">
-                <i id="play-icon" class="fas fa-play" onerror="checkConnection()"></i>Sort
-            </button>
-            <button id="pause-btn" class="btn" onclick="togglePaused()">
-                <i id="pause-icon" class="fas fa-pause"></i>Pause
-            </button>
-            <br>
-            <button id="reset-btn" class="btn" onclick="resetBars()">
-                <i id="reset-icon" class="fas fa-reply"></i>Reset
-            </button>
-            <button id="randomize-btn" class="btn" onclick="randomizeHeights(); updateBars()">
-                <i id="randomize-icon" class="fas fa-question"></i>Random-<br>ize
-            </button>
-        </div>
+        <div id="grey-overlay" onclick="toggleSlideMenu()"></div>
         
-        <div id="graph-placeholder"></div>
-
-        <div id="table-placeholder"></div>
+        <section id="menu-container">
+            <div id="slide-menu">
+                <section id="menu-options-container">
+                    <section id="algorithm-select-container">
+                        <div>Algorithm:</div>
+                        <button name="insertion" onclick="selectAlgorithm(name)">Insertion</button>
+                        <button name="bubble" onclick="selectAlgorithm(name)">Bubble</button>
+                        <button name="merge" onclick="selectAlgorithm(name)">Merge</button>
+                        <button name="selection" onclick="selectAlgorithm(name)">Selection</button>
+                    </section>
+                    <section id="speed-select-container">
+                        <div>Speed:</div>
+                        <button name="1x" onclick="selectSpeed(name)">1x</button>
+                        <button name="2x" onclick="selectSpeed(name)">2x</button>
+                        <button name="3x" onclick="selectSpeed(name)">3x</button>
+                    </section>
+                    <section id="num-bars-select-container">
+                        <div>No. of Bars:</div>
+                        <input type="text" name="num-bars-field" value="50" oninput="validateNumBarsField(value)">
+                        <h3 id="num-bars-popup">(Range: 15 - 300)</h3>
+                    </section>
+                </section>
+                <div id="slide-menu-toggler" onclick="toggleSlideMenu()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+        
+        <section id="main-container">
+            <h1 id="heading">Algorithm Visualizer</h1>
+            
+            <section id="time-box" class="time-box">
+                <h2 id="time-label">Time: 0.0s</h2>
+            </section>
+            
+            <section id="btn-group">
+                <button id="play-btn" onclick="startSort()">
+                    <i id="play-icon" class="fas fa-play" onerror="checkConnection()"></i>Sort
+                </button>
+                <button id="pause-btn" onclick="togglePaused()">
+                    <i id="pause-icon" class="fas fa-pause"></i>Pause
+                </button>
+                <br>
+                <button id="reset-btn" onclick="resetBars()">
+                    <i id="reset-icon" class="fas fa-reply"></i>Reset
+                </button>
+                <button id="randomize-btn" onclick="randomizeHeights(); updateBars()">
+                    <i id="randomize-icon" class="fas fa-question"></i>Random
+                </button>
+            </section>
+            
+            <div id="graph-placeholder"></div>
+            
+            <div id="table-placeholder"></div>
+        </section>
 
         <script src="scripts/drawBars.js"></script>
         <script src="scripts/drawTable.js"></script>
+        <script src="scripts/slideMenu.js"></script>
     </body>
 </html>

@@ -1,31 +1,33 @@
 function startSort() {
   if (!isSortingStarted) {
-    isSortingStarted = true;
+    if (algorithm == "bubble") {
+      bubbleSort();
+      isSortingStarted = true;
+    }
+    if (algorithm == "merge") {
+      mergeSort();
+      isSortingStarted = true;
+    }
+    if (algorithm == "insertion") {
+      insertionSort();
+      isSortingStarted = true;
+    }
+    if (algorithm == "selection") {
+      selectionSort();
+      isSortingStarted = true;
+    }
+  }
+
+  if (isSortingStarted) {
     isSortCancelled = false;
     isCurrentlySorting = true;
     setTime(0, 0);
     startStopwatch();
-
-    if (algorithm == "bubble") {
-      bubbleSort();
-    }
-    if (algorithm == "merge") {
-      mergeSort();
-    }
-    if (algorithm == "insertion") {
-      insertionSort();
-    }
-    if (algorithm == "selection") {
-      selectionSort();
-    }
-}
-
-if (isSortingStarted) {
-  isPaused = false;
-  setButtonColorActive('play')
-  resetButtonColor('pause');
-  greyOutButton('reset');
-  greyOutButton('randomize');
+    isPaused = false;
+    setButtonColorActive("play");
+    resetButtonColor("pause");
+    greyOutButton("reset");
+    greyOutButton("randomize");
   }
 }
 
@@ -44,5 +46,8 @@ async function finishedSorting() {
 
   isCurrentlySorting = false;
   isSortingStarted = false;
-  setBtnsToStartingColors();
+
+  if (isPlaybackComplete) {
+    setBtnsToStartingColors();
+  }
 }

@@ -1,5 +1,4 @@
 var heightsArr = [];
-const numBars = 15;
 const maxNumBars = 300;
 var isPaused = false;
 var isCurrentlySorting = false;
@@ -8,10 +7,15 @@ var isSortingStarted = false;
 var isPlaybackComplete = false;
 var stopwatchSeconds = 0;
 var stopwatchMilliseconds = 0;
-var sortingSpeed = 100;
-var algorithm = "merge";
 var previousRuns = [];
 var timeline = new Timeline();
+var isMenuSliding = false;
+var pageJustLoaded = true;
+
+//options
+var numBars = 15;
+var algorithm = "";
+var sortingSpeed = 100;
 
 //button colors
 const resetBtnBgColor = "rgba(30, 143, 255, 0.233)";

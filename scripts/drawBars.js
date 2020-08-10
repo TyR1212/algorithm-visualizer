@@ -21,10 +21,15 @@ function drawBars() {
   bars += "</div>";
   document.getElementById('graph-placeholder').innerHTML = bars;
   document.getElementById("graph").style.minWidth = (numBars * width + numBars * marginLeft).toString() + "px";
-  setBtnsToStartingColors();
-}
 
-drawBars();
+  if (pageJustLoaded) {
+    setBtnsToStartingColors()
+  }
+  else {
+    setStartAndPauseBtnsToStartingColors();
+    pageJustLoaded = false;
+  }
+}
 
 function removeBars() {
   var bars = document.getElementById("graph");
@@ -39,3 +44,5 @@ function determineBarMargin() {
   else if (numBars <= 100) return 2;
   else return 1;
 }
+
+drawBars();

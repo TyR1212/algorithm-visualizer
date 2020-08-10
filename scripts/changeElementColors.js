@@ -46,6 +46,11 @@ function setBtnsToStartingColors() {
   resetButtonColor("randomize");
 }
 
+function setStartAndPauseBtnsToStartingColors() {
+  greyOutButton("pause");
+  resetButtonColor("play");
+}
+
 async function buttonColorFlash(btnId) {
   var bgColor = btnId == "reset" ? resetBtnBgColor : randomizeBtnBgColor;
   var iconColor = btnId == "reset" ? resetBtnIconColor : randomizeBtnIconColor;

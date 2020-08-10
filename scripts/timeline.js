@@ -15,6 +15,7 @@ class Timeline {
     this._events = [];
   }
 
+  //visually play back the compares and swaps of the algorithm that was just ran
   async playBack() {
     if (!isPlaybackComplete) {
       heightsArr = heightsArrOriginal.slice();
