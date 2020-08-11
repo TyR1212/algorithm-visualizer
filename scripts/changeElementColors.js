@@ -10,7 +10,8 @@ function resetAllBarColors() {
   }
 }
 
-async function colorFadeEffect(className, initialColor) {
+//flash effect for the bars when sorting is completed
+async function colorFlashEffect(className, initialColor) {
   let elements = document.getElementsByClassName(className);
 
   for (let i = 80; i >= 25; i--) {

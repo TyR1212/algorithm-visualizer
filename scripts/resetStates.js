@@ -1,3 +1,4 @@
+//reset the control variables and stopwatch
 function resetStates() {
   isSortingStarted = false;
   isPaused = false;

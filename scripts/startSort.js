@@ -1,5 +1,6 @@
+//if ready to sort, start the sorting
 function startSort() {
-  if (!isSortingStarted) {
+  if (!isSortingStarted && sortingSpeed != 0) {
     if (algorithm == "bubble") {
       bubbleSort();
       isSortingStarted = true;
@@ -16,27 +17,34 @@ function startSort() {
       selectionSort();
       isSortingStarted = true;
     }
-  }
 
+    if (isSortingStarted) {
+      isSortCancelled = false;
+      isCurrentlySorting = true;
+      setTime(0, 0);
+      startStopwatch();
+    }
+  }
+  
   if (isSortingStarted) {
-    isSortCancelled = false;
-    isCurrentlySorting = true;
-    setTime(0, 0);
-    startStopwatch();
     isPaused = false;
     setButtonColorActive("play");
     resetButtonColor("pause");
     greyOutButton("reset");
     greyOutButton("randomize");
   }
+  else { //algorithm and or speed is not selected
+    toggleSlideMenu();
+  }
 }
 
+//if sorting was completed, play back the results stored in the timeline
 async function finishedSorting() {
   await timeline.playBack();
 
   if (isPlaybackComplete) {
     isPlaybackComplete = true;
-    colorFadeEffect("bar", "green");
+    colorFlashEffect("bar", "green");
     addRow();
     redrawTable();
   }

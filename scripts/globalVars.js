@@ -1,4 +1,5 @@
-var heightsArr = [];
+var heightsArr = [];         //the array for sorting, stores the heights of all the bars
+var heightsArrOriginal = []; //keeps track of the original unsorted array for the reset function
 const maxNumBars = 300;
 var isPaused = false;
 var isCurrentlySorting = false;
@@ -7,15 +8,15 @@ var isSortingStarted = false;
 var isPlaybackComplete = false;
 var stopwatchSeconds = 0;
 var stopwatchMilliseconds = 0;
-var previousRuns = [];
-var timeline = new Timeline();
+var previousRuns = [];      //stores all the runs for the previous runs table
+var timeline = new Timeline(); //stores the swap and compare events for the sorting algorithms to play back once sorting is complete
 var isMenuSliding = false;
 var pageJustLoaded = true;
 
 //options
-var numBars = 15;
+var numBars = 30;
 var algorithm = "";
-var sortingSpeed = 100;
+var sortingSpeed = 0;
 
 //button colors
 const resetBtnBgColor = "rgba(30, 143, 255, 0.233)";

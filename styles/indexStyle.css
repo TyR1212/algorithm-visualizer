@@ -28,9 +28,9 @@ body {
 #slide-menu {
   position: absolute;
   left: 0px;
-  top: -150px;
+  top: -120px;
   width: 100%;
-  height: 150px;
+  height: 120px;
   background-image: linear-gradient(rgb(24, 78, 48), rgb(20, 20, 20));
   transition: top 0.4s;
 }
@@ -39,7 +39,7 @@ body {
 }
 #slide-menu-toggler {
   position: absolute;
-	top: 90px;
+	top: 60px;
 	left: 0px;
 	right: 0px;
 	margin: 0 auto;
@@ -54,7 +54,7 @@ body {
 }
 #slide-menu-toggler:hover {
   color: seagreen;
-  top: 95px !important;
+  top: 65px !important;
 }
 #slide-menu-toggler i {
   position: relative;
@@ -65,7 +65,7 @@ body {
 #menu-options-container {
   position: relative;
   left: 40px;
-  top: 30%;
+  top: 23%;
   width: 1235px;
   background-color: rgba(245, 222, 179, 0);
   margin: 0 auto;
@@ -74,7 +74,7 @@ body {
   display: inline-block;
   padding: 0px 30px;
 }
-#menu-options-container div {
+#menu-options-container label {
   font-family: "Sriracha", sans-serif;
   font-size: 20px;
   color: white;
@@ -106,22 +106,17 @@ body {
   background-color: white;
 }
 #num-bars-popup {
-  font-family: "Open Sans", sans-serif;
   font-size: 12px;
-  font-weight: 400;
   color: white;
   display: inline;
   opacity: 0;
   padding-left: 5px;
   transition: opacity 0.4s;
 }
-#graph {
-  position: relative;
-  transform: rotate(180deg);
-  height: 350px;
+#main-container {
   margin: 0 auto;
-  width: 0%;
-  bottom: 0px;
+  width: 1380px;
+  height: 715px;
 }
 #connection-warning {
   position: absolute;
@@ -133,6 +128,14 @@ body {
   background-color: rgba(255, 0, 0, 0.205);
   text-align: center;
   padding: 3px 10px 0px 10px;
+}
+#graph {
+  position: relative;
+  transform: rotate(180deg);
+  height: 350px;
+  margin: -385px auto;
+  width: 0%;
+  bottom: 0px;
 }
 #graph .bar {
   overflow: hidden;
@@ -152,18 +155,23 @@ body {
   left: 5px;
 }
 #time-box {
-  position: absolute;
-  top: 75px;
-  right: 200px;
+  position: relative;
+  margin: 0 auto;
+  top: 0px;
+  left: 498px;
   width: 135px;
   height: 50px;
   border: 1px solid black;
   border-radius: 5px;
+  background-color: rgb(217, 235, 217);
 }
 #btn-group {
-  position: absolute;
-  right: 250px;
-  top: 250px;
+  position: relative;
+  left: 475px;
+  top: 90px;
+  width: 165px;
+  height: 165px;
+  margin: 0 auto;
   z-index: 1;
 }
 #btn-group button {
@@ -182,16 +190,62 @@ body {
   font-size: 20px;
   display: block;
 }
-.table-positioning {
-  margin: 0 auto;
-  width: 31%;
+#stats-box {
   position: relative;
-  top: 80px;
+  right: 550px;
+  bottom: 100px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  width: 250px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(217, 235, 217);
+}
+#stats-box label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 22px;
+  display: block;
+}
+#legend {
+  position: relative;
+  right: 480px;
+  bottom: 10px;
+  margin: 0 auto;
+  width: 125px;
+  height: 75px;
+}
+#legend label {
+  position: relative;
+  bottom: 5px;
+  margin-left: 3px;
+  font-size: 16px;
+}
+.legend-box {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 3px;
+  display: inline-block;
 }
 #table-container {
+  margin: 470px auto 10px;
   width: 520px;
   height: 120px;
   overflow: auto;
+}
+#table-label {
+  position: relative;
+  top: 50px;
+  right: 190px;
+  margin: 0 auto;
+  width: 125px;
+  height: 30px;
+  font-family: "Sriracha", sans-serif;
+  font-size: 20px;
 }
 #runs-table {
   width: 500px;
@@ -207,10 +261,4 @@ body {
 }
 .algorithm-name {
   text-align: left !important;
-}
-#table-label {
-  margin: 0 auto;
-  width: 32%;
-  font-family: "Sriracha", sans-serif;
-  font-size: 20px;
 }

@@ -1,3 +1,4 @@
+//toggle sorting pause
 function togglePaused() {
   if (isCurrentlySorting) {
     isPaused = true;
@@ -8,6 +9,7 @@ function togglePaused() {
   }
 }
 
+//if paused, loop until unpaused or until cancelled
 async function checkIfPaused() {
   if (isPaused) {
     isCurrentlySorting = false;

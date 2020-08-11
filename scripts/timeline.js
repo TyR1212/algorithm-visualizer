@@ -1,3 +1,5 @@
+//this class is meant to store all of the compares and swaps an algorithm does while sorting, then
+//it can be played back visually by swapping around the bars and changing the colors
 class Timeline {
   constructor() {
     this._events = [];
@@ -51,6 +53,7 @@ class Timeline {
   }
 }
 
+//a compare or swap event
 class Event {
   constructor(t, i1, i2) {
     this.type = t;

@@ -33,27 +33,26 @@
     
     <body>
         <div id="grey-overlay" onclick="toggleSlideMenu()"></div>
-        
         <section id="menu-container">
             <div id="slide-menu">
                 <section id="menu-options-container">
                     <section id="algorithm-select-container">
-                        <div>Algorithm:</div>
+                        <label>Algorithm:</label>
                         <button name="insertion" onclick="selectAlgorithm(name)">Insertion</button>
                         <button name="bubble" onclick="selectAlgorithm(name)">Bubble</button>
                         <button name="merge" onclick="selectAlgorithm(name)">Merge</button>
                         <button name="selection" onclick="selectAlgorithm(name)">Selection</button>
                     </section>
                     <section id="speed-select-container">
-                        <div>Speed:</div>
+                        <label>Speed:</label>
                         <button name="1x" onclick="selectSpeed(name)">1x</button>
                         <button name="2x" onclick="selectSpeed(name)">2x</button>
                         <button name="3x" onclick="selectSpeed(name)">3x</button>
                     </section>
                     <section id="num-bars-select-container">
-                        <div>No. of Bars:</div>
+                        <label>No. of Bars:</label>
                         <input type="text" name="num-bars-field" value="50" oninput="validateNumBarsField(value)">
-                        <h3 id="num-bars-popup">(Range: 15 - 300)</h3>
+                        <div id="num-bars-popup">(Range: 15 - 300)</div>
                     </section>
                 </section>
                 <div id="slide-menu-toggler" onclick="toggleSlideMenu()">
@@ -61,7 +60,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section id="main-container">
             <h1 id="heading">Algorithm Visualizer</h1>
             
@@ -84,6 +83,25 @@
                     <i id="randomize-icon" class="fas fa-question"></i>Random
                 </button>
             </section>
+
+            <section id="stats-box">
+                <label id="complexity-label">Complexity:</label>
+                <label id="num-bars-label">No. of Bars: 30</label>
+                <label id="speed-label">Speed:</label>
+            </section>
+
+            <section id="legend">
+                <div class="legend-box" style="background-color: green;"></div>
+                <label>- waiting</label>
+                <br>
+                <div class="legend-box" style="background-color: mediumpurple;"></div>
+                <label>- comparing</label>
+                <br>
+                <div class="legend-box" style="background-color: red;"></div>
+                <label>- swaping</label>
+            </section>
+            
+            <div id="table-label">Previous Runs</div>
             
             <div id="graph-placeholder"></div>
             

@@ -1,3 +1,4 @@
+//restore to original heights array
 function resetBars() {
   if (!isCurrentlySorting) {
     for (let i = 0; i < numBars; i++) {

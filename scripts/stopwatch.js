@@ -1,3 +1,4 @@
+//set new time on stopwatch
 function setTime(sec, ms) {
   document.getElementById("time-label").innerHTML =
     "Time: " + sec.toString() + "." + ms.toString() + "s";
@@ -7,6 +8,7 @@ function setTime(sec, ms) {
   }
 }
 
+//start the stopwatch
 async function startStopwatch() {
   setTime(stopwatchSeconds, stopwatchMilliseconds);
 

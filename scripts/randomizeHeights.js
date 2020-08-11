@@ -1,5 +1,4 @@
-var heightsArrOriginal = [];
-
+//randomize the heights array
 function randomizeHeights() {
   if (!isCurrentlySorting) {
     let currentIndex = heightsArr.length;
